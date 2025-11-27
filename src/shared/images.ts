@@ -1,0 +1,16 @@
+export const IMAGES = {
+  pageNotFound: "/assets/images/effect-404.jpg",
+  logo: "/assets/images/erm-logo.svg",
+  logoWithAi: "/assets/images/logo-with-ai.svg",
+  logoFooter: "/assets/images/erm-logo-footer.svg",
+  logoIcon: "/assets/icons/logo.svg",
+  copyIcon: "/assets/icons/copy.svg",
+  likeIcon: "/assets/icons/like.svg",
+  dislikeIcon: "/assets/icons/dislike.svg",
+  arrowRightIcon: "/assets/icons/right-arrow.svg",
+  documentIcon: "/assets/icons/document-icon.svg",
+  pptIcon: "/assets/icons/ppt-icon.svg",
+  videoOne: "/assets/images/video1.png",
+  videoTwo: "/assets/images/video2.png",
+  playIcon: "/assets/images/play-icon.svg",
+};

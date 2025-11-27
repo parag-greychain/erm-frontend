@@ -1,0 +1,186 @@
+@use "../public/assets/scss/fonts.scss" as fonts;
+@use "../public/assets/scss/variables.scss" as variables;
+@use "../public/assets/scss/icons.scss" as icons;
+
+:root {
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--primary-font);
+  color: var(--font-black);
+  box-sizing: border-box;
+  background-color: var(--product-bg);
+
+  * {
+    box-sizing: border-box;
+    // scrollbar-width: thin;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+}
+
+// Scrollbar Start
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--white-smoke);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--grey);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}
+
+.ant-dropdown {
+  .ant-dropdown-menu {
+    border-radius: var(--border-radius);
+  }
+
+  .common-dropdown-item {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    padding: 0 12px;
+
+    .ant-dropdown-menu-item-icon {
+      margin-right: 12px;
+    }
+  }
+}
+
+.ant-select-dropdown {
+  border-radius: var(--border-radius);
+}
+
+.ant-select-item-option {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.select-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .erm-icon {
+    font-size: 18px;
+  }
+}
+
+.ant-tooltip {
+  .ant-tooltip-inner {
+    background: var(--primary);
+  }
+
+  .ant-tooltip-arrow:before {
+    background: var(--primary);
+  }
+}
+
+.primary-btn {
+  background: var(--primary-btn-bg);
+  color: var(--primary) !important;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  border: none !important;
+  box-shadow: none !important;
+
+  &.ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):hover {
+    background: var(--primary-btn-hover-bg);
+  }
+}
+
+.secondary-btn {
+  background-color: transparent !important;
+  border: solid 2px #0A2B14 !important;
+  color: #0A2B14 !important;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  box-shadow: none !important;
+}
+
+.transparent-btn {
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--primary) !important;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+
+  &:hover {
+    color: var(--primary-btn-hover-bg) !important;
+
+    i {
+      color: var(--primary-btn-hover-bg) !important;
+    }
+  }
+}
+
+.ant-checkbox-wrapper {
+  font-size: 13px;
+  color: var(--primary);
+
+  &:hover {
+    .ant-checkbox-inner {
+      border-color: var(--primary-green) !important;
+    }
+
+    .ant-checkbox-checked .ant-checkbox-inner {
+      background-color: var(--primary-green) !important;
+    }
+  }
+}
+
+.ant-checkbox {
+  .ant-checkbox-inner {
+    border-radius: 3px;
+    box-shadow: 0px 1px 2.1px 0px #0000000d;
+  }
+
+  &.ant-checkbox-checked {
+    .ant-checkbox-inner {
+      background-color: var(--primary-green);
+      border-color: var(--primary-green) !important;
+    }
+  }
+}

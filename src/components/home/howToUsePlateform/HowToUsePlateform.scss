@@ -1,0 +1,158 @@
+.home-learn-section {
+  padding: 0 0;
+
+  .learn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--primary);
+    margin: 0 0 20px;
+    line-height: 30px;
+  }
+
+  h3 {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--primary);
+    margin: 0 0 20px;
+    line-height: 30px;
+  }
+
+  /* LEFT SIDE */
+  .learn-left {
+    width: 60%;
+  }
+
+  .video-grid {
+    display: flex;
+    gap: 20px;
+  }
+
+  .video-card {
+    width: 50%;
+    position: relative;
+    margin-bottom: 15px;
+
+    .video-wrapper {
+      width: 100%;
+      position: relative;
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      .play-icon {
+        width: 13px;
+        height: auto;
+      }
+    }
+
+    .video-title {
+      margin: 0;
+      line-height: 21px;
+      font-weight: 500;
+      color: var(--primary);
+      font-size: 15px;
+    }
+  }
+
+  .see-more {
+    margin-top: 20px;
+    font-weight: 600;
+    color: #1b3c2f;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  /* RIGHT SIDE */
+  .learn-right {
+    width: 40%;
+  }
+
+  .training-list {
+    background: white;
+    border: 1px solid #d3dfd4;
+    border-radius: 6px;
+    padding: 10px;
+  }
+
+  .training-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 14px 16px;
+    cursor: pointer;
+
+    & + .training-card {
+      border-top: 1px solid #d3dfd4;
+    }
+
+    .doc-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+    }
+
+    .training-info {
+      flex: 1;
+
+      h4 {
+        margin: 0 0 5px;
+        font-size: 16px;
+        line-height: 22px;
+        color: #012c12;
+        font-weight: 500;
+      }
+
+      p {
+        margin: 0;
+        font-size: 13px;
+        color: #678071;
+        font-weight: 500;
+        line-height: 20px;
+      }
+    }
+
+    .arrow-right-icon {
+      margin-top: 5px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .home-learn-section .learn-left,
+  .home-learn-section .learn-right {
+    width: 100%;
+  }
+
+  .home-learn-section .learn-wrapper {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}

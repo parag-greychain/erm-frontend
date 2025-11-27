@@ -1,0 +1,139 @@
+.home-faq-section {
+  padding: 80px 0;
+  color: #019a20;
+
+  .faq-wrapper {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  .faq-left {
+    width: 35%;
+
+    .secondary-btn {
+      padding: 16px 26px !important;
+      height: auto;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 30px;
+      color: var(--primary);
+      margin: 0 0 12px;
+    }
+
+    p {
+      margin: 0 0 20px;
+      color: #5a7665;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 400;
+    }
+
+    .support-btn {
+      padding: 12px 25px;
+      border: 2px solid #1b3c2f;
+      border-radius: 25px;
+      background: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  .faq-right {
+    width: 65%;
+
+    .faq-collapse {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+
+      .ant-collapse-content > .ant-collapse-content-box {
+        padding: 0;
+        border: none !important;
+        margin: 0 0 10px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        color: var(--primary);
+        opacity: 0.8;
+
+        * {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 26px;
+          color: var(--primary);
+        }
+      }
+
+      .ant-collapse-item .ant-collapse-content {
+        margin-right: 0;
+        padding: 0 0 0;
+        background-color: transparent;
+        border: none;
+      }
+
+      .ant-collapse-item .ant-collapse-header .ant-collapse-arrow {
+        width: 16px;
+      }
+
+      .ant-collapse-item {
+        border-radius: 10px !important;
+        border: 1px solid #d3dfd4;
+        margin-bottom: 15px;
+        background: #fff;
+        overflow: hidden;
+        padding: 20px 20px 10px 20px;
+
+        &::before {
+          display: none;
+        }
+
+        &.ant-collapse-item-active {
+          background: #f6f9f6;
+        }
+      }
+
+      .ant-collapse-header {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1b3c2f;
+        padding: 0 0 10px 0 !important;
+
+        .ant-collapse-header-text {
+          font-weight: 500;
+          font-size: 16px;
+          color: var(--primary);
+          line-height: 24px;
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+
+      .ant-collapse-expand-icon {
+        margin-inline-end: 0 !important;
+      }
+
+      svg {
+        color: var(--primary);
+        transition: transform 0.2s ease;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .home-faq-section .faq-left,
+  .home-faq-section .faq-right {
+    width: 100%;
+  }
+
+  .home-faq-section .faq-wrapper {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}

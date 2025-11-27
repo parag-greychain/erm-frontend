@@ -1,0 +1,113 @@
+.stepper-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.stepper-header {
+  margin-bottom: 24px;
+}
+
+.stepper-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 16px;
+}
+
+.hide-steps-btn {
+  color: #1890ff;
+  padding: 0;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.hide-steps-btn:hover {
+  color: #40a9ff;
+}
+
+.step-item-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 16px;
+}
+
+.step-label-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.step-label-title {
+  font-weight: 500;
+  color: #262626;
+}
+
+.step-content {
+  padding: 16px 0;
+}
+
+.step-description {
+  color: #595959;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.thought-process {
+  background-color: #e6f7ff;
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid #b3e5fc;
+}
+
+.thought-header {
+  color: #1f1f1f;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.findings-list {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.findings-list li {
+  color: #262626;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.findings-list li:last-child {
+  margin-bottom: 0;
+}
+
+.steps-section {
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.empty-state {
+  background-color: white;
+  padding: 24px;
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+  text-align: center;
+}
+
+.empty-state-text {
+  color: #8c8c8c;
+  font-size: 14px;
+}

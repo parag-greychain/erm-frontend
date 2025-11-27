@@ -1,0 +1,144 @@
+// @keyframes moveBG {
+//     from {
+//         background-position-x: 0px;
+//     }
+
+//     to {
+//         background-position-x: -100vw;
+//     }
+// }
+
+.error-page {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+    font-family: var(--primary-font);
+    // background-image: url(/assets/images/error-page-bg.jpg);
+    // background-position: 0% 50%;
+    // background-repeat: repeat-x;
+    // background-size: cover;
+    // animation: moveBG 60s linear infinite;
+    // -webkit-animation: moveBG 60s linear infinite;
+
+    // .error-inner {
+    //     --octopusSize: 110px;
+    //     border: none;
+    //     position: relative;
+    //     border-radius: 0;
+    //     background: none;
+    //     padding-top: var(--octopusSize);
+    //     min-width: 340px;
+    //     z-index: 1;
+    //     margin-top: calc(var(--octopusSize) / 2 * -1);
+
+    //     &:before {
+    //         content: "";
+    //         position: absolute;
+    //         right: 0;
+    //         top: 0;
+    //         background-image: url(/assets/images/octopus-sad.png);
+    //         background-repeat: no-repeat;
+    //         background-position: center;
+    //         background-size: contain;
+    //         width: 100%;
+    //         height: calc(var(--octopusSize) + 2px);
+    //         z-index: -1;
+    //     }
+
+    //     &.happy:before {
+    //         background-image: url(/assets/images/octopus-happy.png);
+    //     }
+
+    //     &>.ant-card-body {
+    //         border-radius: 15px;
+    //         padding: 30px;
+    //         background: var(--white);
+    //         border: 1px solid var(--primary);
+    //         position: relative;
+    //         z-index: 1;
+
+    //         &:before {
+    //             content: "";
+    //             position: absolute;
+    //             right: 0;
+    //             top: 0;
+    //             background: url(/assets/images/octopus-hand.svg) no-repeat calc(100% - 13%) 50%;
+    //             background-size: contain;
+    //             width: 100%;
+    //             height: 85px;
+    //             transform: translateY(-35%);
+    //             z-index: -1;
+    //         }
+    //     }
+    // }
+    .error-inner {
+        text-align: center;
+        width: 100%;
+    }
+
+    .page-not-found-img {
+        text-align: left;
+    }
+
+    .page-not-found-img {
+        padding-right: 25%;
+        display: block;
+        margin-left: -20px;
+    }
+
+    .page-not-found-img img {
+        width: 100%;
+    }
+
+    h1 {
+        font-family: var(--secondary-font);
+        font-size: 35vh;
+        font-weight: 800;
+        margin: 0 0 20px;
+        line-height: 1em;
+        color: var(--font-black);
+    }
+
+    h2 {
+        font-family: var(--secondary-font);
+        font-size: 30px;
+        font-weight: 800;
+        margin: 0 0 20px;
+        line-height: 1em;
+        color: var(--font-black);
+    }
+
+    p {
+        margin: 0 auto 20px;
+        max-width: 300px;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--font-black);
+    }
+
+    .ant-btn.btn {
+        font-size: 13px;
+        font-weight: 400;
+        border-radius: var(--border-radius);
+        padding: 7px 14px;
+        line-height: normal;
+        height: auto;
+        background: var(--primary);
+        gap: 4px;
+
+        &:hover {
+            background: var(--secondary);
+            color: var(--white);
+            border-color: var(--secondary);
+        }
+
+        .ant-btn-icon {
+            line-height: inherit;
+            font-size: calc(100% + 1px);
+        }
+    }
+}
