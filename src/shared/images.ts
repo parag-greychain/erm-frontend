@@ -13,4 +13,5 @@ export const IMAGES = {
   videoOne: "/assets/images/video1.png",
   videoTwo: "/assets/images/video2.png",
   playIcon: "/assets/images/play-icon.svg",
+  projectHero: "/assets/images/project-hero-img.jpg",
 };

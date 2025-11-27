@@ -4,6 +4,7 @@ export enum PATHS {
   login = "/login",
   knowledgeSources = "/knowledge-sources",
   agents = "/agents",
+  projectDetails = "/project-details",
 }
 
 export enum LocalStorageName {

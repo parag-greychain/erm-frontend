@@ -1,6 +1,8 @@
 @use "../public/assets/scss/fonts.scss" as fonts;
 @use "../public/assets/scss/variables.scss" as variables;
 @use "../public/assets/scss/icons.scss" as icons;
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 :root {
   font-family: "Figtree", sans-serif;

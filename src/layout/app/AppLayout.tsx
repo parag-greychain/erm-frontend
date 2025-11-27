@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom";
 import { SideBar } from "../../components";
+import UserDropdown from "../../components/userDropdown/userDropdown";
 import "./AppLayout.scss";
-import { Avatar } from "antd";
 
 const AppLayout = () => {
 
   return (
     <div className="main-layout">
       <SideBar />
-      <Avatar>S</Avatar>
+      <UserDropdown />
       <div className="layout-content">
         <Outlet />
       </div>

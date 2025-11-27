@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import "./App.scss";
 import { AppLayout } from "./layout";
-import { Home, Agents, Chat, ErrorPage, KnowledgeSources } from "./pages";
+import { Home, Agents, Chat, ErrorPage, KnowledgeSources, ProjectDetails } from "./pages";
 import { PATHS } from "./shared";
 
 const App = () => {
@@ -20,6 +20,7 @@ const App = () => {
             <Route path={PATHS.knowledgeSources} element={<KnowledgeSources />} />
           </Route>
           <Route index path={PATHS.home} element={<Home />} />
+          <Route index path={PATHS.projectDetails} element={<ProjectDetails />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Route>
