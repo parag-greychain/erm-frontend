@@ -4,11 +4,10 @@ import "./AppLayout.scss";
 import { Avatar } from "antd";
 
 const AppLayout = () => {
-
   return (
     <div className="main-layout">
       <SideBar />
-      <Avatar>S</Avatar>
+      <Avatar className="user-profile-icon">S</Avatar>
       <div className="layout-content">
         <Outlet />
       </div>

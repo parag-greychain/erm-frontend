@@ -4,7 +4,7 @@ import { useState } from "react";
 import ProjectCard from "../../components/myProjects/projectCard/ProjectCard";
 import CustomPagination from "../../components/pagination/CustomPagination";
 import CreateSourcesModal from "../knowledgeSources/createSourcesModal/CreateSourcesModal";
-import "./Agent.scss";
+import "./Projects.scss";
 
 interface CardData {
   title: string;
@@ -88,12 +88,12 @@ const Projects = () => {
   ];
 
   return (
-    <div className="agent-page-container">
+    <div className="projects-page-container">
       <div className="page-header">
-        <div className="page-title">Agents</div>
+        <div className="page-title">Projects</div>
       </div>
-      <div className="agent-filter-wrapper">
-        <div className="agent-header-right">
+      <div className="projects-filter-wrapper">
+        <div className="projects-header-right">
           <Input
             className="search-input"
             placeholder="Search..."
@@ -110,14 +110,14 @@ const Projects = () => {
           </Button>
         </div>
       </div>
-      <div className="agent-page-body">
-        <div className="agent-row">
+      <div className="projects-page-body">
+        <div className="projects-row">
           {sampleCardData.map((card, index) => (
             <ProjectCard key={index} index={index} project={card} />
           ))}
         </div>
       </div>
-      <div className="agent-footer">
+      <div className="projects-footer">
         <CustomPagination
           currentPage={1}
           pageSize={10}
