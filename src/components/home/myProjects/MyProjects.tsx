@@ -104,10 +104,10 @@ const MyProjects = () => {
   return (
     <section className="home-my-projects">
       <div className="container">
-        <div className="agent-page-container">
+        <div className="home-page-project-container">
           <div className="page-header">
-            <div className="page-title">My Projects</div>
-            <div className="agent-header-right">
+            <div className="page-header-top">
+              <div className="page-title">My Projects</div>
               <Button
                 type="primary"
                 className="transparent-btn"
@@ -133,7 +133,7 @@ const MyProjects = () => {
               </div>
               <div></div>
 
-              <div className="agent-header-right">
+              <div className="page-header-right">
                 <Input
                   className="search-input"
                   placeholder="Search..."
@@ -152,8 +152,8 @@ const MyProjects = () => {
             </div>
           </div>
 
-          <div className="agent-page-body">
-            <div className="agent-row">
+          <div className="home-project-page-body">
+            <div className="home-project-row">
               {sampleCardData.map((card, index) => (
                 <ProjectCard key={index} index={index} project={card} />
               ))}
