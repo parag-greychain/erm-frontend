@@ -13,4 +13,6 @@ export const IMAGES = {
   videoOne: "/assets/images/video1.png",
   videoTwo: "/assets/images/video2.png",
   playIcon: "/assets/images/play-icon.svg",
+  loginBg: "/assets/images/login-bg.png",
+  microsoft: "/assets/icons/microsoft.svg",
 };

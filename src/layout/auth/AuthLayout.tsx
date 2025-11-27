@@ -1,7 +1,11 @@
+import { Outlet } from "react-router-dom";
+
 const AuthLayout = () => {
-    return (
-        <div>AUth</div>
-    )
-}
+  return (
+    <div className="auth-layout-container">
+      <Outlet />
+    </div>
+  );
+};
 
 export default AuthLayout;
