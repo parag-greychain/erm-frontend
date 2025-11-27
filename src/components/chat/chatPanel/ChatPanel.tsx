@@ -109,15 +109,16 @@ const ChatPanel: React.FC = () => {
   return (
     <div className="chat-interface">
       {messages.length === 0 ? (
-        // <div className="chat-welcome">
-        //   <div className="welcome-header">
-        //     <div className="welcome-logo">
-        //       <img src={IMAGES.logoIcon} alt="ERM" />
-        //       <h1>Ask ERM</h1>
-        //     </div>
-        //     <p>Ask anything from the knowledge base</p>
-        //   </div>
-        // </div>
+        <div className="chat-welcome">
+          <div className="welcome-header">
+            <div className="welcome-logo">
+              <img src={IMAGES.logoIcon} alt="ERM" />
+              <h1>Ask ERM</h1>
+            </div>
+            <p>Ask anything from the knowledge base</p>
+          </div>
+        </div>
+      ) : (
         <div className="chat-stepper-wrapper">
           <div className="chat-messages">
             <div className="message message-user chat-question">
@@ -193,14 +194,13 @@ const ChatPanel: React.FC = () => {
             </div>
           </div>
         </div>
-      ) : (
-        <div className="chat-messages">
-          {messages.map((msg) => (
-            <div key={msg.id} className={`message message-${msg.sender}`}>
-              <div className="message-content">{msg.text}</div>
-            </div>
-          ))}
-        </div>
+        // <div className="chat-messages">
+        //   {messages.map((msg) => (
+        //     <div key={msg.id} className={`message message-${msg.sender}`}>
+        //       <div className="message-content">{msg.text}</div>
+        //     </div>
+        //   ))}
+        // </div>
       )}
 
       <div className="chat-input-container footer-chat">

@@ -4,6 +4,8 @@ import { useState } from "react";
 import CreateSourcesModal from "../../../pages/knowledgeSources/createSourcesModal/CreateSourcesModal";
 import ProjectCard from "../../myProjects/projectCard/ProjectCard";
 import "./MyProjects.scss";
+import { PATHS } from "../../../shared";
+import { useNavigate } from "react-router-dom";
 
 interface CardData {
   title: string;
@@ -23,6 +25,7 @@ const STATUS = {
 const MyProjects = () => {
   const [isSourcesModalOpen, setIsSourcesModalOpen] = useState(false);
   const [status, setStatus] = useState(STATUS.ACTIVE);
+  const navigate = useNavigate();
 
   const sampleCardData: CardData[] = [
     {
@@ -113,6 +116,9 @@ const MyProjects = () => {
                 className="transparent-btn"
                 iconPosition="end"
                 icon={<i className="erm-icon arrow-right-icon" />}
+                onClick={() => {
+                  navigate(PATHS.projects);
+                }}
               >
                 VIEW ALL
               </Button>

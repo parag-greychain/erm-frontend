@@ -17,6 +17,7 @@ const App = () => {
         <Route>
           <Route element={<AppLayout />}>
             <Route index path={PATHS.chat} element={<Chat />} />
+            <Route path={`${PATHS.chat}/:chatId`} element={<Chat />} />
             <Route path={PATHS.agents} element={<Agents />} />
             <Route path={PATHS.projects} element={<Projects />} />
             <Route

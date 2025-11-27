@@ -23,7 +23,7 @@ const Sidebar: React.FC = () => {
   }, []);
 
   const handleNewChat = () => {
-    navigate("/");
+    navigate(PATHS.chat);
   };
 
   const menuItems = [
@@ -42,7 +42,7 @@ const Sidebar: React.FC = () => {
       key: "home",
       icon: (
         <div className="icon-wrapper">
-          <i className="erm-icon agent"></i>
+          <i className="erm-icon home"></i>
         </div>
       ),
       label: "Home",
@@ -53,7 +53,7 @@ const Sidebar: React.FC = () => {
       key: "projects",
       icon: (
         <div className="icon-wrapper">
-          <i className="erm-icon agent"></i>
+          <i className="erm-icon my-project"></i>
         </div>
       ),
       label: "My Projects",
@@ -64,7 +64,7 @@ const Sidebar: React.FC = () => {
       key: "agent",
       icon: (
         <div className="icon-wrapper">
-          <i className="erm-icon source"></i>
+          <i className="erm-icon agent"></i>
         </div>
       ),
       label: "Agent",
@@ -106,7 +106,7 @@ const Sidebar: React.FC = () => {
             {recents.map((item) => (
               <Link
                 key={item.id}
-                to={`/chat/${item.id}`}
+                to={`${PATHS.chat}/${item.id}`}
                 className="recent-item"
               >
                 {item.title}
