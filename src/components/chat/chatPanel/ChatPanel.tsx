@@ -10,6 +10,7 @@ import { IMAGES } from "../../../shared";
 import KnowledgeSourceModal from "../knowledgeSourceDropdown/KnowledgeDropdown";
 import "./ChatPanel.scss";
 import FeedbackModal from "../feedbackModal/FeedbackModal";
+import ChatInputPanel from "../chatInputPanel/ChatInputPanel";
 
 interface IMessage {
   id: number;
@@ -109,14 +110,17 @@ const ChatPanel: React.FC = () => {
   return (
     <div className="chat-interface">
       {messages.length === 0 ? (
-        <div className="chat-welcome">
-          <div className="welcome-header">
-            <div className="welcome-logo">
-              <img src={IMAGES.logoIcon} alt="ERM" />
-              <h1>Ask ERM</h1>
+        <div className="container">
+          <div className="chat-welcome">
+            <div className="welcome-header">
+              <div className="welcome-logo">
+                <img src={IMAGES.logoIcon} alt="ERM" />
+                <h1>Ask ERM</h1>
+              </div>
+              <p>Ask anything from the knowledge base</p>
             </div>
-            <p>Ask anything from the knowledge base</p>
           </div>
+          <ChatInputPanel />
         </div>
       ) : (
         <div className="chat-stepper-wrapper">
@@ -203,7 +207,10 @@ const ChatPanel: React.FC = () => {
         // </div>
       )}
 
-      <div className="chat-input-container footer-chat">
+      <div
+        className="chat-input-container footer-chat"
+        hidden={messages.length === 0}
+      >
         <div className="chat-input-box">
           <div className="input-wrapper">
             <Input.TextArea
