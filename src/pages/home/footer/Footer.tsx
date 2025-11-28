@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { IMAGES } from "../../../shared";
 import "./Footer.scss";
 
@@ -7,7 +8,9 @@ const Footer: React.FC = () => {
       <section className="home-footer">
         <div className="container">
           <div className="logo-footer">
-            <img src={IMAGES.logoFooter} alt="ERM" />
+            <Link to="/">
+              <img src={IMAGES.logoFooter} alt="ERM" />
+            </Link>
           </div>
           <p>
             Copyright © 2000 - 2025 The ERM International Group Limited, All
