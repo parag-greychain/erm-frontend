@@ -6,6 +6,7 @@ import MyProjects from "../../components/home/myProjects/MyProjects";
 import { IMAGES } from "../../shared";
 import Footer from "./footer/Footer";
 import "./Home.scss";
+import { Button } from "antd";
 
 const Home: React.FC = () => {
   return (
