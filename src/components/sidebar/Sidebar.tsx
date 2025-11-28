@@ -1,4 +1,4 @@
-import { Menu } from "antd";
+import { Menu, Select } from "antd";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IMAGES, PATHS } from "../../shared";
@@ -67,7 +67,23 @@ const Sidebar: React.FC = () => {
           <i className="erm-icon agent"></i>
         </div>
       ),
-      label: "Agent",
+      label: (
+        <div>
+          <span>Agent </span>
+          <Select
+            classNames={{
+              popup: {
+                root: "feedback-select-dropdown",
+              },
+            }}
+            placeholder="Select a person"
+            options={[
+              { value: "1", label: "Knowledge AI" },
+              { value: "2", label: "Report Builder" },
+            ]}
+          />
+        </div>
+      ),
       className: "common-dropdown-item",
       onClick: () => navigate(PATHS.chat),
     },
