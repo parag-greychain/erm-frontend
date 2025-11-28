@@ -6,6 +6,7 @@ export enum PATHS {
   agents = "/agents",
   projects = "/projects",
   projectDetails = "/project-details",
+  reportGenerator = "/report-generator",
 }
 
 export enum LocalStorageName {

@@ -11,6 +11,7 @@ import { PATHS } from "./shared";
 import Projects from "./pages/projects/Projects";
 import AuthLayout from "./layout/auth/AuthLayout";
 import Login from "./pages/auth/login/Login";
+import ReportGenerator from "./pages/reportGenerator/ReportGenerator";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -24,6 +25,7 @@ const App = () => {
           <Route path={`${PATHS.chat}/:chatId`} element={<Chat />} />
           <Route path={PATHS.agents} element={<Agents />} />
           <Route path={PATHS.projects} element={<Projects />} />
+          <Route path={PATHS.reportGenerator} element={<ReportGenerator />} />
           <Route path={PATHS.knowledgeSources} element={<KnowledgeSources />} />
         </Route>
         <Route index path={PATHS.home} element={<Home />} />
