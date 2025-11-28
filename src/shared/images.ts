@@ -16,4 +16,6 @@ export const IMAGES = {
   projectHero: "/assets/images/project-hero-img.jpg",
   loginBg: "/assets/images/login-bg.png",
   microsoft: "/assets/icons/microsoft.svg",
+  reportCardBg: "/assets/images/report-builder-card-bg.png",
+  knowledgeCardBg: "/assets/images/knowledge-al-card-bg.png"
 };
