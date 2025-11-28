@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button, Input, Tooltip } from "antd";
 import {
   ArrowRightOutlined,
-  AudioOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
 import { KnowledgeSourceModal } from "../..";
@@ -10,12 +9,21 @@ import "./ChatInputPanel.scss";
 import { useNavigate } from "react-router-dom";
 import { PATHS } from "../../../shared";
 
-const ChatInputPanel: React.FC = () => {
+interface ChatInputPanelProps {
+  onSendMessage?: (message: string) => void;
+}
+
+const ChatInputPanel: React.FC<ChatInputPanelProps> = ({ onSendMessage }) => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
 
   const handleSendMessage = () => {
-    navigate(PATHS.chat);
+    if (onSendMessage) {
+      onSendMessage(inputValue);
+      setInputValue("");
+    } else {
+      navigate(PATHS.chat);
+    }
   };
   return (
     <div className="chat-input-container footer-chat">
@@ -26,7 +34,10 @@ const ChatInputPanel: React.FC = () => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onPressEnter={(e) => {
-              if (e.ctrlKey || e.metaKey) {
+              if (onSendMessage && !e.shiftKey) {
+                e.preventDefault();
+                handleSendMessage();
+              } else if (e.ctrlKey || e.metaKey) {
                 handleSendMessage();
               }
             }}
@@ -59,20 +70,21 @@ const ChatInputPanel: React.FC = () => {
           <div className="right-controls">
             <Tooltip title="prompt text">
               <Button
-                shape="circle"
+                shape="round"
                 variant="outlined"
-                icon={<AudioOutlined />}
-                className="control-btn"
-              />
+                icon={<i className="erm-icon my-project" />}
+                className="control-btn">
+                Shell
+              </Button>
             </Tooltip>
             <Button
               type="primary"
-              shape="round"
+              shape="circle"
+              icon={<ArrowRightOutlined />}
               iconPosition="end"
               onClick={handleSendMessage}
               className="primary-btn ask-btn"
             >
-              <span className="ask-text">ASK</span> <ArrowRightOutlined />
             </Button>
           </div>
         </div>

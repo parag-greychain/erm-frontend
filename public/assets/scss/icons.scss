@@ -87,9 +87,30 @@
     color: var(--primary);
   }
 
-  &[class*="arrow-right-icon"] {
-    mask-image: url(/assets/icons/arrow-right-icon.svg);
+  &[class*="toggle-up-icon"] {
+    mask-image: url(/assets/icons/toggle-up.svg);
     width: 12px;
     color: #084f30;
   }
+
+  &[class*="search-icon"] {
+    mask-image: url(/assets/icons/search-icon.svg);
+  }
+
+  &[class*="edit-icon"] {
+    mask-image: url(/assets/icons/edit.svg);
+  }
+
+  &[class*="duration-icon"] {
+    mask-image: url(/assets/icons/duration.svg);
+  }
+
+  &[class*="export-icon"] {
+    mask-image: url(/assets/icons/export.svg);
+  }
+
+  &[class*="copy-icon"] {
+    mask-image: url(/assets/icons/copy.svg);
+  }
+
 }

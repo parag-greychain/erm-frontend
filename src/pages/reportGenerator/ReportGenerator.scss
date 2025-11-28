@@ -1,0 +1,271 @@
+@use "../../../public/assets/scss/variables.scss" as *;
+
+.report-generator-container {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-dark-green);
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        margin: 0;
+        color: var(--text-dark-green);
+    }
+
+    .rg-content {
+        display: grid;
+        grid-template-columns: minmax(320px, 460px) 1fr;
+
+    }
+
+    .rg-left-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .chat-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        padding: 20px 0px 0 0;
+        overflow: auto;
+
+        .chat-welcome {
+            padding-left: 20px;
+            padding-right: 20px;
+            max-width: 350px;
+
+            .welcome-header {
+                margin-bottom: 0px;
+            }
+
+            h2 {
+                font-size: 30px;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+        }
+
+        .chat-content {
+            padding-left: 20px;
+            padding-right: 20px;
+            flex-grow: 1;
+        }
+
+        .chat-messages {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .rg-right-panel {
+        border-left: 1px solid #edf2ee;
+        box-shadow: none;
+        background: transparent;
+        border-radius: 0;
+    }
+
+    .rg-header {
+        padding: 12px 10px 16px 10px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .rg-document-eyebrow {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .rg-collaborators {
+            display: flex;
+            align-items: center;
+
+            .ant-avatar-group {
+                display: flex;
+                align-items: center;
+
+                .ant-avatar {
+                    border: 2px solid var(--white);
+                    margin-left: -10px;
+                    cursor: pointer;
+                    transition: transform 0.2s;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    &:hover {
+                        z-index: 10;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .rg-collaborator-badge {
+                min-width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background: #D3DFD4;
+                color: var(--primary);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: 500;
+                z-index: 9;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .rg-document-body {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+    }
+
+    .rg-toc {
+        background-color: var(--white);
+        border-right: 1px solid rgba(211, 223, 212, 0.58);
+
+        .rg-toc-header {
+            background: #C4D0D369;
+            padding: 2px 5px 2px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h3 {
+                font-size: 12px;
+                font-weight: 500;
+                color: var(--primary);
+            }
+        }
+
+        .rg-toc-content {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .rg-search .ant-input-affix-wrapper {
+            border-radius: 3px;
+            padding: 6px 10px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .ant-list {
+            flex: 1;
+            overflow: auto;
+            max-height: 72vh;
+        }
+
+        .ant-list-item {
+            padding: 6px 8px !important;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--primary);
+            border-radius: 4px;
+            border-bottom: none !important;
+            cursor: pointer;
+
+            &:hover {
+                background: #d3dfd4;
+            }
+        }
+    }
+
+    .rg-article {
+        background: var(--white);
+        box-shadow: none;
+
+        .rg-document-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 6px 16px;
+            border-top: 1px solid rgba(211, 223, 212, 0.5);
+            border-bottom: 1px solid rgba(211, 223, 212, 0.5);
+
+            h2 {
+                font-size: 12px;
+                font-weight: 600;
+                color: var(--primary);
+            }
+        }
+
+        .rg-document-actions {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            .ant-btn {
+                color: var(--primary);
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 11px;
+                margin-right: 10px;
+            }
+
+            .ant-btn-text {
+                padding: 4px 6px;
+                font-size: 18px;
+                margin: 0px;
+            }
+        }
+
+        .rg-document-content {
+            padding: 30px 48px 40px;
+            overflow: auto;
+            height: 80vh;
+
+            p {
+                margin: 0 0 16px;
+                line-height: 1.6;
+                color: #1a2a21;
+            }
+        }
+    }
+
+    .ant-btn-text {
+        padding: 4px 6px;
+        font-size: 18px;
+        margin: 0px;
+    }
+}
+
+// @media (max-width: 1200px) {
+//     .report-generator-container {
+//         padding: 20px;
+
+//         .rg-content {
+//             grid-template-columns: 1fr;
+//         }
+
+//         .rg-document-body {
+//             grid-template-columns: 1fr;
+//         }
+//     }
+// }
+
+@media (max-width: 768px) {
+    .report-generator-container {
+        padding: 16px;
+
+        .rg-article .rg-document-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .rg-document-actions {
+            flex-wrap: wrap;
+        }
+    }
+}
