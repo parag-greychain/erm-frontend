@@ -9,6 +9,8 @@ import {
 } from "antd";
 import React from "react";
 import "./ProjectCard.scss";
+import { useNavigate } from "react-router-dom";
+import { PATHS } from "../../../shared";
 
 interface ProjectCardProps {
   index: number;
@@ -25,6 +27,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ index, project }) => {
+  const navigate = useNavigate();
   const items: MenuProps["items"] = [
     {
       key: "1",
@@ -32,7 +35,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ index, project }) => {
     },
   ];
   return (
-    <Card className="project-card" key={index}>
+    <Card
+      className="project-card"
+      key={index}
+      onClick={() => navigate(PATHS.projectDetails)}
+    >
       <div className="header-and-body">
         <div className="card-header">
           <div className="header-left">
