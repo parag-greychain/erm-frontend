@@ -8,6 +8,7 @@ import CustomPagination from "../../components/pagination/CustomPagination";
 import Slider from "react-slick";
 
 const ProjectDetails: React.FC = () => {
+    const [selectedRowKeys, setSelectedRowKeys] = React.useState<number[]>([]);
 
     var settings = {
         dots: true,
@@ -17,12 +18,31 @@ const ProjectDetails: React.FC = () => {
         slidesToScroll: 1
     };
 
+    const tools = [
+        {
+            id: 1,
+            title: "CPD Report Builder",
+            description: "Turn data into impact assessments. Choose your project and let AI handle the heavy lifting",
+            buttonText: "START BUILDING",
+            bgImage: IMAGES.reportCardBg,
+            className: "green",
+        },
+        {
+            id: 2,
+            title: "Knowledge AI",
+            description: "Ask AI to find anything across knowledge sources or to analyze data",
+            buttonText: "ASK A QUESTION",
+            bgImage: IMAGES.knowledgeCardBg,
+            className: "dark",
+        },
+    ];
+
     const collaborators = [
-        { name: "Oliver Bennett", role: "Technical Partner", status: "Left" },
-        { name: "Sophie Harrington", role: "Partner" },
-        { name: "James Whitmore", role: "Project Coordinator" },
-        { name: "Ethan Rowley", role: "Project Coordinator" },
-        { name: "Charlotte Hughes", role: "Project Coordinator" },
+        { name: "Oliver Bennett", avatar: "https://i.pravatar.cc/150?img=12", role: "Technical Partner", status: "Left" },
+        { name: "Sophie Harrington", avatar: "https://i.pravatar.cc/150?img=23", role: "Partner" },
+        { name: "James Whitmore", avatar: "https://i.pravatar.cc/150?img=43", role: "Project Coordinator" },
+        { name: "Ethan Rowley", avatar: "https://i.pravatar.cc/150?img=12", role: "Project Coordinator" },
+        { name: "Charlotte Hughes", avatar: "null", role: "Project Coordinator" },
     ];
 
     const filesData = new Array(6).fill(null).map((_, i) => ({
@@ -32,10 +52,7 @@ const ProjectDetails: React.FC = () => {
         lastSynced: i === 0 ? "10 hours ago" : "4:05 PM 24 Nov 2025",
     }));
 
-    const [selectedRowKeys, setSelectedRowKeys] = React.useState<number[]>([]);
-
     const allSelected = filesData.length > 0 && selectedRowKeys.length === filesData.length;
-
 
     const toggleSelectAll = (e: CheckboxChangeEvent) => {
         if (e.target.checked) {
@@ -69,21 +86,50 @@ const ProjectDetails: React.FC = () => {
             title: "Title",
             dataIndex: "title",
             key: "title",
-            render: (text: any) => (
-                <div className="file-title">
-                    <div className="file-icon">
-                        <img src={IMAGES.documentIcon} alt="documentIcon" />
+            render: (text: any, record: any) => {
+                const fileName = String(text || "");
+                const lower = fileName.toLowerCase();
+
+                const getIcon = () => {
+                    // prioritize explicit type if provided on record
+                    if (record.type) {
+                        const t = String(record.type).toLowerCase();
+                        if (t === "folder") return IMAGES.documentIcon;
+                        if (t === "pdf") return IMAGES.pptIcon;
+                        if (t === "doc" || t === "docx") return IMAGES.documentIcon;
+                        if (t === "xls" || t === "xlsx") return IMAGES.documentIcon;
+                    }
+
+                    // infer from filename extension
+                    if (lower.endsWith(".pdf")) return IMAGES.documentIcon;
+                    if (lower.endsWith(".doc") || lower.endsWith(".docx")) return IMAGES.documentIcon;
+                    if (lower.endsWith(".xls") || lower.endsWith(".xlsx")) return IMAGES.documentIcon;
+
+                    // if path looks like a folder (contains separators), treat as folder icon
+                    if (record.path && String(record.path).includes(">")) return IMAGES.documentIcon;
+
+                    // fallback
+                    return IMAGES.documentIcon;
+                };
+
+                const icon = getIcon();
+
+                return (
+                    <div className="file-title">
+                        <div className="file-icon">
+                            <img src={icon} alt="file-icon" />
+                        </div>
+                        <div>
+                            <div className="title-text">{fileName}</div>
+                            <Badge
+                                status={"success"}
+                                text={"Active"}
+                                className="status-badge"
+                            />
+                        </div>
                     </div>
-                    <div>
-                        <div className="title-text">{text}</div>
-                        <Badge
-                            status={"success"}
-                            text={"Active"}
-                            className="status-badge"
-                        />
-                    </div>
-                </div>
-            ),
+                );
+            },
         },
         {
             title: "File Path",
@@ -149,18 +195,20 @@ const ProjectDetails: React.FC = () => {
                                 <Button shape="round" type="primary" className="primary-btn">MANAGE</Button>
                             </div>
 
-                            <div className="slider-container">
+                            <div className="tool-list">
                                 <Slider {...settings}>
-                                    <Card className="tool-card green">
-                                        <h4>CPD Report Builder</h4>
-                                        <p>Turn data into impact assessments. Choose your project and let AI handle the heavy lifting</p>
-                                        <Button shape="round" variant="outlined" className="tool-btn">START BUILDING</Button>
-                                    </Card>
-                                    <Card className="tool-card dark">
-                                        <h4>Knowledge AI</h4>
-                                        <p>Ask AI to find anything across knowledge sources or to analyze data</p>
-                                        <Button shape="round" variant="outlined" className="tool-btn">ASK A QUESTION</Button>
-                                    </Card>
+                                    {tools.map((tool) => (
+                                        <Card key={tool.id} className={`tool-card ${tool.className}`}>
+                                            <img className="card-bg-img" src={tool.bgImage} alt={tool.title} />
+                                            <div className="tool-content">
+                                                <h4>{tool.title}</h4>
+                                                <p>{tool.description}</p>
+                                                <Button shape="round" type="default" ghost className="tool-btn">
+                                                    {tool.buttonText}
+                                                </Button>
+                                            </div>
+                                        </Card>
+                                    ))}
                                 </Slider>
                             </div>
 
@@ -206,7 +254,7 @@ const ProjectDetails: React.FC = () => {
                                     renderItem={(item) => (
                                         <List.Item>
                                             <List.Item.Meta
-                                                avatar={<Avatar src={null}>{item.name.charAt(0)}</Avatar>}
+                                                avatar={<Avatar src={item.avatar}>{item.name.charAt(0)}</Avatar>}
                                                 title={<div className="collab-title">{item.name}
                                                     <span className="collab-status">{item.status}</span>
                                                 </div>}
