@@ -7,36 +7,15 @@ import {
 } from "@ant-design/icons";
 import { KnowledgeSourceModal } from "../..";
 import "./ChatInputPanel.scss";
-
-interface IMessage {
-  id: number;
-  text: string;
-  sender: "user" | "bot";
-}
+import { useNavigate } from "react-router-dom";
+import { PATHS } from "../../../shared";
 
 const ChatInputPanel: React.FC = () => {
-  const [messages, setMessages] = useState<IMessage[]>([]);
+  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
 
   const handleSendMessage = () => {
-    if (inputValue.trim()) {
-      const newMessage = {
-        id: messages.length,
-        text: inputValue,
-        sender: "user" as const,
-      };
-      setMessages([...messages, newMessage]);
-      setInputValue("");
-
-      setTimeout(() => {
-        const botMessage = {
-          id: messages.length + 1,
-          text: "This is a response from the AI assistant based on the selected knowledge sources.",
-          sender: "bot" as const,
-        };
-        setMessages((prev) => [...prev, botMessage]);
-      }, 1000);
-    }
+    navigate(PATHS.chat);
   };
   return (
     <div className="chat-input-container footer-chat">

@@ -1,4 +1,4 @@
-.agent-page-container {
+.projects-page-container {
   .page-header {
     height: 56px;
     display: flex;
@@ -11,9 +11,9 @@
       font-weight: 500;
     }
   }
-  .agent-filter-wrapper {
+  .projects-filter-wrapper {
     padding: 0px 14px 14px 12px;
-    .agent-header-right {
+    .projects-header-right {
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -27,20 +27,20 @@
       border-color: #d3dfd4;
     }
   }
-  .agent-page-body {
+  .projects-page-body {
     padding: 0px 5px 5px 14px;
     overflow: auto;
     height: calc(100vh - 160px);
     margin-right: 5px;
 
-    .agent-row {
+    .projects-row {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 12px;
     }
   }
 
-  .agent-footer {
+  .projects-footer {
     padding: 0 18px;
     border-top: 1px solid #d3dfd4;
     display: flex;

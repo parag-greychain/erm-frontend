@@ -1,16 +1,60 @@
 .home-my-projects {
   padding: 37px 0 60px 0;
 
-  .page-header {
-    padding: 0;
-    margin-bottom: 24px;
+  .home-page-project-container {
+    .page-header {
+      padding: 0;
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
 
-    .page-title {
-      font-size: 30px;
-      font-weight: 500;
-      color: var(--primary);
-      margin: 0 0;
-      line-height: 30px;
+      .page-header-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .page-title {
+        font-size: 30px;
+        font-weight: 500;
+        color: var(--primary);
+        margin: 0 0;
+        line-height: 30px;
+      }
+    }
+
+    .page-header-bottom {
+      width: 100%;
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .page-header-right {
+      display: flex;
+      gap: 10px;
+
+      .search-input {
+        border-radius: 6px;
+        border-color: var(--menu-text-color);
+        width: 300px;
+        outline: none !important;
+        box-shadow: none !important;
+      }
+    }
+  }
+
+  .home-project-page-body {
+    overflow: auto;
+    height: calc(100vh - 270px);
+    margin-right: 5px;
+
+    .home-project-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 12px;
     }
   }
 
@@ -30,5 +74,14 @@
 @media (max-width: 479px) {
   .page-header-bottom .primary-btn {
     font-size: 11px;
+  }
+
+  .page-header-right {
+    flex-direction: column;
+    width: 100%;
+
+    .search-input {
+      width: 100% !important;
+    }
   }
 }

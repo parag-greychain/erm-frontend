@@ -4,7 +4,6 @@ import UserDropdown from "../../components/userDropdown/userDropdown";
 import "./AppLayout.scss";
 
 const AppLayout = () => {
-
   return (
     <div className="main-layout">
       <SideBar />
