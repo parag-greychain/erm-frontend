@@ -24,5 +24,7 @@ export const IMAGES = {
   toggleUpIcom: "/assets/icons/toggle-up.svg",
   editIcon: "/assets/icons/edit.svg",
   aiIconn: "/assets/icons/ai.svg",
-
+  cardOneBg: "/assets/images/card-one-bg.svg",
+  cardTwoBg: "/assets/images/card-two-bg.svg",
+  placeholderCard: "/assets/images/placeholder-card.svg",
 };

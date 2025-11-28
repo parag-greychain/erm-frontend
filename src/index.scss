@@ -11,7 +11,7 @@
   font-style: normal;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--white);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,7 +25,7 @@ body {
   font-family: var(--primary-font);
   color: var(--font-black);
   box-sizing: border-box;
-  background-color: var(--product-bg);
+  background-color: var(--white);
 
   * {
     box-sizing: border-box;
@@ -130,12 +130,17 @@ body {
 
 .secondary-btn {
   background-color: transparent !important;
-  border: solid 2px #0a2b14 !important;
+  border: solid 1px #0a2b14 !important;
   color: #0a2b14 !important;
   font-weight: 600;
   font-size: 13px;
   text-transform: uppercase;
   box-shadow: none !important;
+
+  &:hover {
+    border-color: #000 !important;
+    color: #000 !important;
+  }
 }
 
 .transparent-btn {

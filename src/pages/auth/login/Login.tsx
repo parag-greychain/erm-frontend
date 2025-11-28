@@ -18,7 +18,6 @@ const Login: FC = () => {
             <br />
             Instant Answers.
           </div>
-
           <p>
             Generate rigorous impact assessments and get AI-powered answers to
             your toughest questions turning complexity into clarity in
@@ -31,7 +30,6 @@ const Login: FC = () => {
       <div className="login-right">
         <div className="login-box">
           <h3>Login</h3>
-
           <Button
             type="default"
             className="login-btn"
@@ -40,7 +38,6 @@ const Login: FC = () => {
             <img src={IMAGES.microsoft} alt="microsoft" /> Continue with
             Microsoft
           </Button>
-
           <div className="links">
             <a href="#">Contact Support</a>
             <a href="#">Privacy Policy</a>

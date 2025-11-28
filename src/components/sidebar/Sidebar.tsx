@@ -1,19 +1,13 @@
-import { Menu } from "antd";
+import { Menu, Select } from "antd";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IMAGES, PATHS } from "../../shared";
 import "./Sidebar.scss";
+import ChatHistory from "../chat/chatHistory/ChatHistory";
 
 const Sidebar: React.FC = () => {
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
-  const [recents] = useState([
-    { id: 1, title: "Zero-Code API Integration Platform" },
-    { id: 2, title: "Document Builder Agent Icon" },
-    { id: 3, title: "Research Image Sources" },
-    { id: 4, title: "Enterprise AI Knowledge" },
-    { id: 5, title: "Enterprise AI Knowledge" },
-  ]);
 
   useEffect(() => {
     // Listen to the global toggleSidebar event
@@ -67,7 +61,24 @@ const Sidebar: React.FC = () => {
           <i className="erm-icon agent"></i>
         </div>
       ),
-      label: "Agent",
+      label: (
+        <div>
+          <span>Agent </span>
+          <Select
+            classNames={{
+              popup: {
+                root: "feedback-select-dropdown",
+              },
+            }}
+            placeholder="Select Agent"
+            value={"1"}
+            options={[
+              { value: "1", label: "Knowledge AI" },
+              { value: "2", label: "Report Builder" },
+            ]}
+          />
+        </div>
+      ),
       className: "common-dropdown-item",
       onClick: () => navigate(PATHS.chat),
     },
@@ -98,26 +109,7 @@ const Sidebar: React.FC = () => {
         theme="dark"
         className="sidebar-menu"
       />
-
-      <div className="sidebar-recents">
-        <div className="sidebar-recents-wrap">
-          <div className="recents-header">Your chats</div>
-          <div className="recents-list">
-            {recents.map((item) => (
-              <Link
-                key={item.id}
-                to={`${PATHS.chat}/${item.id}`}
-                className="recent-item"
-              >
-                <div>{item.title}</div>
-                <span className="project-agent-text">
-                  CPD Report Builder, Shell
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
+      <ChatHistory />
     </aside>
   );
 };

@@ -82,6 +82,20 @@ $border-color: #e6e6e6;
       align-items: center;
       justify-content: flex-start;
 
+      .ant-select-outlined:not(.ant-select-customize-input)
+        .ant-select-selector {
+        border: none !important;
+        background: none;
+        outline: none !important;
+        box-shadow: none !important;
+      }
+
+      .ant-select-single .ant-select-selector .ant-select-selection-placeholder,
+      .ant-select .ant-select-selection-item,
+      .ant-select .ant-select-arrow {
+        color: #00ffbe;
+      }
+
       .icon-wrapper {
         min-width: 24px;
         display: flex;
@@ -129,36 +143,6 @@ $border-color: #e6e6e6;
       top: 0px;
       padding-left: 8px;
       padding-bottom: 2px;
-    }
-
-    .recents-list {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-
-      .recent-item {
-        padding: 8px 8px;
-        border-radius: 6px;
-        color: #d3dfd4;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 500;
-        transition: all 0.2s;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.1);
-          color: $text-light;
-        }
-
-        .project-agent-text {
-          color: #d3dfd4 !important;
-          font-size: 12px;
-          font-weight: 300;
-        }
-      }
     }
   }
 

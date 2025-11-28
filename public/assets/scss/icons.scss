@@ -113,4 +113,21 @@
     mask-image: url(/assets/icons/copy.svg);
   }
 
+  &[class*="drawer-close-icon"] {
+    mask-image: url(/assets/icons/drawer-close-icon.svg);
+    width: 12px;
+    color: black;
+  }
+
+  &[class*="search-icon"] {
+    mask-image: url(/assets/icons/search-icon.svg);
+    width: 20px;
+    color: var(--primary);
+  }
+
+  &[class*="filter-icon"] {
+    mask-image: url(/assets/icons/filter-icon.svg);
+    width: 16px;
+    color: var(--primary);
+  }
 }
