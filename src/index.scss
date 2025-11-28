@@ -11,7 +11,7 @@
   font-style: normal;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--white);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,7 +25,7 @@ body {
   font-family: var(--primary-font);
   color: var(--font-black);
   box-sizing: border-box;
-  background-color: var(--product-bg);
+  background-color: var(--white);
 
   * {
     box-sizing: border-box;

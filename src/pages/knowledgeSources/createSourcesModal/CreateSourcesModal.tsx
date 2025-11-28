@@ -52,25 +52,20 @@ const CreateSourcesModal = ({
     >
       <div className="feedback-modal-body">
         <div className="form-item">
-          <span className="title">
-            *Source Name
-          </span>
+          <span className="title">*Source Name</span>
           <Input
             placeholder="Enter source name"
             className="feedback-input-box"
           />
         </div>
         <div className="form-item">
-          <span className="title">
-            *SELECT PERMISSION GROUP
-          </span>
+          <span className="title">*Select Permission Group</span>
           <Select
             placeholder="Select"
             classNames={{
               popup: {
                 root: "feedback-select-dropdown",
               },
-              
             }}
             options={feedbackTopics}
           />
