@@ -1,18 +1,24 @@
-import { useState } from "react";
-import { Button, Input, Tooltip } from "antd";
 import {
   ArrowRightOutlined,
   AudioOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
-import { KnowledgeSourceModal } from "../..";
-import "./ChatInputPanel.scss";
+import { Button, Input, Tooltip } from "antd";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { KnowledgeSourceModal } from "../..";
 import { PATHS } from "../../../shared";
+import SelectSources from "../selectSources/SelectSources";
+import "./ChatInputPanel.scss";
 
 const ChatInputPanel: React.FC = () => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
+  const [isShowSelectedSource, setIsShowSelectedSource] = useState(false);
+
+  const showDrawer = () => {
+    setIsShowSelectedSource(!isShowSelectedSource);
+  };
 
   const handleSendMessage = () => {
     navigate(PATHS.chat);
@@ -43,6 +49,7 @@ const ChatInputPanel: React.FC = () => {
                 variant="outlined"
                 icon={<PlusOutlined />}
                 className="control-btn"
+                onClick={showDrawer}
               />
             </Tooltip>
             <KnowledgeSourceModal />
@@ -77,6 +84,12 @@ const ChatInputPanel: React.FC = () => {
           </div>
         </div>
       </div>
+      {isShowSelectedSource && (
+        <SelectSources
+          open={isShowSelectedSource}
+          onClose={() => setIsShowSelectedSource(false)}
+        />
+      )}
     </div>
   );
 };

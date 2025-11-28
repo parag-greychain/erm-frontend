@@ -1,0 +1,34 @@
+.recents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .recent-item {
+    padding: 8px 8px;
+    border-radius: 6px;
+    color: #d3dfd4;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+    }
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+    }
+
+    .project-agent-text {
+      color: #d3dfd4 !important;
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+}
