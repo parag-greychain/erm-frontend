@@ -244,3 +244,34 @@
         }
     }
 }
+
+.file-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .title-text {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--primary);
+    }
+
+    .status-badge {
+        .ant-badge-status-text {
+            font-size: 10px;
+            color: #678071;
+        }
+
+        .ant-badge-status-dot {
+            top: 0px;
+            width: 8px;
+            height: 8px;
+        }
+    }
+}
+
+.ant-table-cell {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--primary);
+}

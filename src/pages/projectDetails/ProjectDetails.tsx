@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Button, Card, Col, List, Row, Table, Tag, Checkbox, type CheckboxChangeEvent } from "antd";
+import { Avatar, Button, Card, Col, List, Row, Table, Tag, Checkbox, type CheckboxChangeEvent, Badge } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import "./ProjectDetails.scss";
 import UserDropdown from "../../components/userDropdown/userDropdown";
@@ -71,10 +71,16 @@ const ProjectDetails: React.FC = () => {
             key: "title",
             render: (text: any) => (
                 <div className="file-title">
-                    <div className="file-icon" />
+                    <div className="file-icon">
+                        <img src={IMAGES.documentIcon} alt="documentIcon" />
+                    </div>
                     <div>
                         <div className="title-text">{text}</div>
-                        <div className="title-sub">Active</div>
+                        <Badge
+                            status={"success"}
+                            text={"Active"}
+                            className="status-badge"
+                        />
                     </div>
                 </div>
             ),
