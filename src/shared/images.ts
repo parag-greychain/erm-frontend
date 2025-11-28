@@ -17,5 +17,8 @@ export const IMAGES = {
   loginBg: "/assets/images/login-bg.png",
   microsoft: "/assets/icons/microsoft.svg",
   reportCardBg: "/assets/images/report-builder-card-bg.png",
-  knowledgeCardBg: "/assets/images/knowledge-al-card-bg.png"
+  knowledgeCardBg: "/assets/images/knowledge-al-card-bg.png",
+  cardOneBg: "/assets/images/card-one-bg.svg",
+  cardTwoBg: "/assets/images/card-two-bg.svg",
+  placeholderCard: "/assets/images/placeholder-card.svg",
 };

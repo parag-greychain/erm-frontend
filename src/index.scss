@@ -136,6 +136,11 @@ body {
   font-size: 13px;
   text-transform: uppercase;
   box-shadow: none !important;
+
+  &:hover {
+    border-color: #000 !important;
+    color: #000 !important;
+  }
 }
 
 .transparent-btn {
