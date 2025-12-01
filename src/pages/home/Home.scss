@@ -490,7 +490,9 @@
   background: var(--primary-green) !important;
 }
 
-
+.source-drawer .ant-tabs-content {
+  min-height: calc(100vh - 194px);
+}
 
 
 
